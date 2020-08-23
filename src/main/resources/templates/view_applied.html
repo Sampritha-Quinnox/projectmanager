@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>View applied</title>
+<style>
+.myDiv {
+  border: 5px outset oldlace;
+  background-color: darkcyan;
+  text-align: center;
+}
+</style>
+</head>
+<body style="background-color: lightcyan">
+<div align="center">
+<div class="myDiv">
+<h1 style="color:lightcyan;">Project Requirement Portal</h1>
+</div>
+<br/><br/>
+<h2 style="color:maroon"> Following Employees are applied for the Project Requirement post</h2>
+<br/>
+<form action="#" th:action="@{/exitapplied}" th:object="${applied}">
+
+
+
+<table border="1" cellpadding="10">
+<thead  style="background-color:darkcyan">
+
+			<tr>
+			    <th>Application ID</th>
+				<th>Project ID</th>
+				<th>Project Name</th>
+				<th>User Name</th>	
+				<th>Current project</th>
+				<th>Experience</th>	
+				<th>Language</th>
+		</thead>
+		<tbody>
+		<tr th:each="applied : ${applied}">
+		<td th:text="${applied.id}">Application ID</td>
+		<td th:text="${applied.pid}">Project ID</td>
+		<td th:text="${applied.projectname}">Project Name</td>
+		<td th:text="${applied.name}">User Name</td>
+		<td th:text="${applied.current_project}">Current Project</td>
+		<td th:text="${applied.experience}">Experience</td>
+		<td th:text="${applied.language}">Language</td>
+		
+		
+</tr>
+		</tbody>
+				
+	</table>
+	<br/><br/>
+	<button type="submit">exit</button>
+	<br/>	
+	</form>
+</div>
+
+</body>
+</html>

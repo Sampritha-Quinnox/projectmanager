@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create New post</title>
+<style>
+.myDiv {
+  border: 5px outset oldlace;
+  background-color: darkcyan;
+  text-align: center;
+}
+</style>
+</head>
+<body style="background-color: lightcyan">
+<div align="center">
+<div class="myDiv">
+<h1 style="color:lightcyan;">Project Requirement Portal</h1>
+</div>
+<br/>
+<h2 style="color:maroon">Create New Project Requirement Post</h2>
+<br/>
+<form action="#" th:action="@{/save}" th:object="${project}" th:method="post">
+<table border="0" cellpadding="10">
+                <tr>
+					<td>Project Name:</td>
+					<td><input type="text" th:field="*{name}"></td>
+				</tr>
+				 <tr>
+					<td>Project description:</td>
+					<td><input type="text" th:field="*{description}"></td>
+				</tr>
+				 <tr>
+					<td>Location:</td>
+					<td><input type="text" th:field="*{location}"></td>
+				</tr>
+				<tr>
+					<td>Vacancy:</td>
+					<td><input type="text" th:field="*{vacancy}"></td>
+				</tr>
+				
+				</table><br/><br/><br/>
+<button type="submit">Save</button>
+</form>
+</div>
+
+</body>
+</html>

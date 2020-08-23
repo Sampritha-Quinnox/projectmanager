@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>search application</title>
+<style>
+.myDiv {
+  border: 5px outset oldlace;
+  background-color: darkcyan;
+  text-align: center;
+}
+</style>
+</head>
+<body style="background-color: lightcyan">
+<div align="center">
+<div class="myDiv">
+<h1 style="color:lightcyan;">Project Requirement Portal</h1>
+</div>
+<br/>
+<form  th:action="@{/searchbyname}"  th:objec="${applied}" th:method="get">
+<table border="0" cellpadding="10">
+                <tr>
+					<td style="color:maroon"> Enter a project Name to see employee who applied for that project</td>
+					<td><input type="text" id="projectname" name="projectname"></td>
+				</tr>
+				
+				
+
+</table> <br/><br/><br/>
+<button type="submit">Search</button>
+</form>
+</div>
+
+</body>
+</html>
