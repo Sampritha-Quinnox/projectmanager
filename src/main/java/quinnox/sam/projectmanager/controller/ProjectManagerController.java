@@ -2,7 +2,7 @@ package quinnox.sam.projectmanager.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +43,7 @@ public class ProjectManagerController {
 	    }
 
 	    @RequestMapping(value = "/registration", method = RequestMethod.POST)
-	    public String registration(@ModelAttribute("user") @Valid User user, BindingResult bindingResult, Model model) {
+	    public String registration(@ModelAttribute("user") User user, BindingResult bindingResult, Model model) {
 	    	 User userExists = userService.getUserByUsername(user.getUsername());
 	    	 if(userExists != null) {
 	    		   bindingResult.rejectValue("username", "error.user", "This user already exists!");
