@@ -23,18 +23,18 @@
 <h4 style="color:darkcyan"> You can do the following Actions</h4>
 <table border="0" cellpadding="10">
 <tr>
-<td sec:authorize="hasRole('ROLE_ADMIN')">
+<td sec:authorize="hasRole('ROLE_PM')">
 <a th:href="@{'/new/'}">Create New Project Requirement</a></td></tr>
 <tr>
 <td>
 <a th:href="@{'/view/'}">Project Requirement Post</a></td></tr>
 
 <tr>
-<td sec:authorize="hasRole('ROLE_ADMIN')">
+<td sec:authorize="hasRole('ROLE_PM')">
 <a th:href="@{'/editordeletebysearch'}">Edit or Delete the Applied Post</a></td>
 </tr>
 <tr>
-<td sec:authorize="hasRole('ROLE_ADMIN')">
+<td sec:authorize="hasRole('ROLE_PM')">
 <a th:href="@{'/searchapplication/'}">Search Employees who applied for project requirement post</a></td>
 </tr>
 
